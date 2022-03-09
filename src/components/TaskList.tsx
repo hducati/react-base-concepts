@@ -22,8 +22,10 @@ export function TaskList() {
   function handleCreateNewTask() {
     if (!newTaskTitle) return
 
+    const taskId = tasks.length === 0 ? 1 : tasks.slice(-1)[0].id
+
     const task = {
-      id: parseInt(crypto.randomUUID()),
+      id: taskId + 1,
       title: newTaskTitle,
       isComplete: false
     }
