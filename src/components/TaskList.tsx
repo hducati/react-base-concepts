@@ -29,11 +29,8 @@ export function TaskList() {
       title: newTaskTitle,
       isComplete: false
     }
-
-    const newTasks = tasks
-    newTasks.push(task)
     
-    setTasks([...newTasks])
+    setTasks((previousTasks) => ({...previousTasks, task}))
     setNewTaskTitle('')
   }
 
